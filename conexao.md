@@ -10,45 +10,39 @@ conexao = mysql.connector.connect(
 cursor = conexao.cursor()
 
 cursor.execute("""
-    INSERT INTO professor (ID_PROFESSOR, EMAIL, SENHA, NOME)
+    INSERT INTO usuarios (nome, email, senha, tipo)
     VALUES (%s, %s, %s, %s)
-""", (1, "profa@escola.com", "senha123", "Profa Ana"))
-
+""", ("Lucas Silva", "lucas@cliente.com", "senha123", "cliente"))
 conexao.commit()
 
-cursor.execute("USE mydb")
 cursor.execute("""
-    INSERT INTO turmas (ID_TURMA, NOME, professor_ID_PROFESSOR)
+    INSERT INTO categorias (nome, descricao)
+    VALUES (%s, %s)
+""", ("Camisetas", "Diversas camisetas de várias cores e tamanhos"))
+conexao.commit()
+
+cursor.execute("""
+    INSERT INTO produtos (nome, descricao, preco, tamanho, cor, estoque, id_categoria, imagem_url)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+""", ("Camiseta Básica", "Camiseta de algodão, confortável e simples.", 59.90, "M", "Branca", 50, 1, "camiseta_basica.jpg"))
+conexao.commit()
+
+cursor.execute("""
+    INSERT INTO carrinho (id_usuario, id_produto, quantidade)
     VALUES (%s, %s, %s)
-""", (1, "Pré I", 1))
-
-conexao.commit()
-
-cursor.execute("USE tcc")
-cursor.execute("""
-    INSERT INTO pastas_alunos (ID_ALUNO, TURMA, NOME_ALUNO, FOTO, turmas_ID_TURMA)
-    VALUES (%s, %s, %s, %s, %s)
-""", (1, "Pré I", "Lucas Silva", "lucas.png", 1))
-
+""", (1, 1, 2))  
 conexao.commit()
 
 cursor.execute("""
-    INSERT INTO atividade (ID_ATIVIDADE, NOME, DATA, VISTO)
+    INSERT INTO pedidos (id_usuario, total, status)
+    VALUES (%s, %s, %s)
+""", (1, 119.80, "Pendente"))  
+conexao.commit()
+
+cursor.execute("""
+    INSERT INTO itens_pedido (id_pedido, id_produto, quantidade, preco_unitario)
     VALUES (%s, %s, %s, %s)
-""", (1, "Pintura com guache", "2025-05-03", "Sim"))
-
-conexao.commit()
-
-cursor.execute("""
-    INSERT INTO pastas_alunos_has_atividade (
-        pastas_alunos_ID_ALUNO,
-        pastas_alunos_turmas_ID_TURMA,
-        atividade_ID_ATIVIDADE,
-        DESCRIÇÃO,
-        foto_atividade
-    ) VALUES (%s, %s, %s, %s, %s)
-""", (1, 1, 1, "Lucas pintou um sol com guache", "atividade1.png"))
-
+""", (1, 1, 2, 59.90))  
 conexao.commit()
 
 print("Todos os dados foram inseridos com sucesso!")
