@@ -1,6 +1,3 @@
-CREATE DATABASE tcc;
-USE tcc;
-
 CREATE TABLE usuarios (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
@@ -44,14 +41,4 @@ CREATE TABLE pedidos (
     status VARCHAR(30) DEFAULT 'Pendente',
     total DECIMAL(10, 2),
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
-);
-
-CREATE TABLE itens_pedido (
-    id_item INT AUTO_INCREMENT PRIMARY KEY,
-    id_pedido INT,
-    id_produto INT,
-    quantidade INT,
-    preco_unitario DECIMAL(10, 2),
-    FOREIGN KEY (id_pedido) REFERENCES pedidos(id_pedido),
-    FOREIGN KEY (id_produto) REFERENCES produtos(id_produto)
 );
