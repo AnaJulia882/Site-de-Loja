@@ -1,3 +1,7 @@
+CREATE DATABASE tcc;
+USE tcc;
+
+-- Tabela de usuários
 CREATE TABLE usuarios (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
@@ -6,12 +10,14 @@ CREATE TABLE usuarios (
     tipo ENUM('cliente', 'admin') DEFAULT 'cliente'
 );
 
+-- Tabela de categorias
 CREATE TABLE categorias (
     id_categoria INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(50) NOT NULL,
     descricao TEXT
 );
 
+-- Tabela de produtos
 CREATE TABLE produtos (
     id_produto INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
@@ -20,25 +26,27 @@ CREATE TABLE produtos (
     tamanho VARCHAR(10),
     cor VARCHAR(30),
     estoque INT DEFAULT 0,
-    id_categoria INT,
     imagem_url TEXT,
-    FOREIGN KEY (id_categoria) REFERENCES categorias(id_categoria)
+    categorias_id_categoria INT,
+    FOREIGN KEY (categorias_id_categoria) REFERENCES categorias(id_categoria)
 );
 
+-- Tabela de carrinho
 CREATE TABLE carrinho (
     id_carrinho INT AUTO_INCREMENT PRIMARY KEY,
-    id_usuario INT,
-    id_produto INT,
-    quantidade INT DEFAULT 1,
-    FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario),
-    FOREIGN KEY (id_produto) REFERENCES produtos(id_produto)
+    quantidade INT NOT NULL DEFAULT 1,
+    usuarios_id_usuario INT,
+    produtos_id_produto INT,
+    FOREIGN KEY (usuarios_id_usuario) REFERENCES usuarios(id_usuario),
+    FOREIGN KEY (produtos_id_produto) REFERENCES produtos(id_produto)
 );
 
+-- Tabela de pedidos
 CREATE TABLE pedidos (
     id_pedido INT AUTO_INCREMENT PRIMARY KEY,
-    id_usuario INT,
     data_pedido DATETIME DEFAULT CURRENT_TIMESTAMP,
     status VARCHAR(30) DEFAULT 'Pendente',
     total DECIMAL(10, 2),
-    FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
+    carrinho_id_carrinho INT,
+    FOREIGN KEY (carrinho_id_carrinho) REFERENCES carrinho(id_carrinho)
 );
