@@ -77,6 +77,38 @@ class Usuario implements JsonSerializable {
         return $stmt->execute();
     }
 
+    public static function readAll() {
+    $conexao = Banco::getConexao();
+    $sql = "SELECT * FROM usuarios";
+    $resultado = $conexao->query($sql);
+
+    $usuarios = [];
+
+    while ($linha = $resultado->fetch_object()) {
+        $usuario = new Usuario();
+        $usuario->setId($linha->id_usuario);
+        $usuario->setNome($linha->nome);
+        $usuario->setEmail($linha->email);
+        $usuario->setTipo($linha->tipo);
+        // NÃO pega a senha por segurança.
+
+        $usuarios[] = $usuario;
+    }
+
+    return $usuarios;
+}
+
+public function update($id, $nome, $email, $tipo) {
+    $conexao = Banco::getConexao();
+    
+    $sql = "UPDATE usuarios SET nome = ?, email = ?, tipo = ? WHERE id_usuario = ?";
+    $stmt = $conexao->prepare($sql);
+    $stmt->bind_param("sssi", $nome, $email, $tipo, $id);
+    
+    return $stmt->execute();
+}
+
+
     public function setId($id) {
         $this->id_usuario = $id;
     }

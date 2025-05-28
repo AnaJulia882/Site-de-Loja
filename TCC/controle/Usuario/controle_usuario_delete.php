@@ -3,8 +3,8 @@
 require_once("modelo/Banco.php");
 require_once("modelo/Usuario.php");
 
-$input = json_decode(file_get_contents("php://input"));
-$id = $input->id ?? null;
+// Pega o ID direto de $_REQUEST
+$id = $_REQUEST['id'] ?? null;
 
 if (!$id) {
     echo json_encode(["status" => false, "msg" => "ID não informado!"]);
@@ -12,7 +12,9 @@ if (!$id) {
 }
 
 $objUsuario = new Usuario();
-$sucesso = $objUsuario->delete($id);
+$objUsuario->setId($id);
+
+$sucesso = $objUsuario->delete();
 
 if ($sucesso) {
     echo json_encode(["status" => true, "msg" => "Usuário deletado com sucesso!"]);

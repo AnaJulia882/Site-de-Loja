@@ -37,6 +37,15 @@ $roteador->delete("/usuarios/(\d+)", function ($idUsuario) {
     require_once("controle/Usuario/controle_usuario_delete.php");
 });
 
+$roteador->post ("/logar",function(){
+    require_once("controle/Usuario/controle_usuario_login.php");
+
+});
+
+$roteador->put("/usuarios/senha", function(){
+    require_once("controle/Usuario/controle_usuario_trocarSenha.php");
+});
+
 // Executa o roteador
 $roteador->run();
 ?>

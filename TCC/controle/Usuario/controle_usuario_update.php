@@ -3,12 +3,10 @@
 require_once("modelo/Banco.php");
 require_once("modelo/Usuario.php");
 
-$input = json_decode(file_get_contents("php://input"));
-
-$id = $input->id ?? null;
-$nome = $input->nome ?? null;
-$email = $input->email ?? null;
-$tipo = $input->tipo ?? "cliente";
+$id = $_REQUEST['id'] ?? null;
+$nome = $_REQUEST['nomeUsuario'] ?? null;
+$email = $_REQUEST['emailUsuario'] ?? null;
+$tipo = $_REQUEST['tipo'] ?? "cliente";
 
 if (!$id || !$nome || !$email) {
     echo json_encode(["status" => false, "msg" => "Dados incompletos!"]);
@@ -23,4 +21,5 @@ if ($sucesso) {
 } else {
     echo json_encode(["status" => false, "msg" => "Erro ao atualizar usuário."]);
 }
+
 ?>
