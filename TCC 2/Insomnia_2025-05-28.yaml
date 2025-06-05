@@ -1,0 +1,448 @@
+type: collection.insomnia.rest/5.0
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1719769299694
+  modified: 1719769299694
+collection:
+  - url: http://localhost:3000/livros
+    name: /livro
+    meta:
+      id: req_9a70c55fc2ce45a89c509a6db20d76fd
+      created: 1729623351791
+      modified: 1748381270451
+      isPrivate: false
+      sortKey: -1729623351791
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "usuario": {
+            "nomeUsuario": "João da Silva",
+            "emailUsuario": "joao.silva@example.com",
+            "senhaUsuario": "senhaSegura123"
+          }
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_37d973f17dda4c3fb44e5cc6c63169a0
+      - name: User-Agent
+        value: insomnia/10.1.0
+        id: pair_e4691d59ec0b46fabbf59282f074ac4f
+      - id: pair_0b680ef2446b4c5e9d4a5b06a14bf429
+        name: Authorization
+        value: Bearer
+          <eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkX3VzdWFyaW8iOjEsIm5vbWUiOiJGZWxpcGUiLCJlbWFpbCI6ImZlbGlwZUBnbWFpbC5jb20iLCJpZF9saXZybyI6MSwidGl0dWxvIjoiSGFycnkgUG90dGVyIn0sImlhdCI6MTczMDA1OTY3NywiZXhwIjoxNzMwMTQ2MDc3fQ.VnLDRy6UgFnxGiKcC61uoqjEE-gqxgod6t3ZUtu6Scg>
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/livros
+    name: /livros
+    meta:
+      id: req_b269e6e6407d467d826f9d5bad99fb36
+      created: 1729685016422
+      modified: 1730061159282
+      isPrivate: false
+      sortKey: -1729685016422
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/10.1.0
+        id: pair_e772efa2c7734b68ab66a478b1db2b7f
+      - id: pair_aa5bcc3952dc4d9fa5b4f31989477adf
+        name: Authorization
+        value: Bearer
+          <eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7InBheWxvYWQiOnsiaWRfdXN1YXJpbyI6MSwibm9tZSI6IkZlbGlwZSIsImVtYWlsIjoiZmVsaXBlQGdtYWlsLmNvbSIsImlkX2xpdnJvIjoxLCJ0aXR1bG8iOiJIYXJyeSBQb3R0ZXIifSwiaWF0IjoxNzMwMDU5Njc3LCJleHAiOjE3MzAxNDYwNzd9LCJpYXQiOjE3MzAwNjEwMDEsImV4cCI6MTczMDE0NzQwMX0.qewGgpyDf9TmMELa3QP4PsuCuNv0XMdxlN09ysLz7Xs>
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/livros/2
+    name: /livros
+    meta:
+      id: req_ef2635b234b249c3a5a4e196d68e3adc
+      created: 1729686989496
+      modified: 1730763166727
+      isPrivate: false
+      sortKey: -1729686989496
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"livro":{
+        		"titulo": "teste2",
+            "autor": "Patrick Rothfuss",
+            "ano_publicacao": "2007",
+            "genero": "Fantasia",
+            "disponibilidade": true
+        	}
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/10.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/livros/2
+    name: /livros
+    meta:
+      id: req_87b9d597f8e147d393283884648879c2
+      created: 1729688469517
+      modified: 1730763208967
+      isPrivate: false
+      sortKey: -1729688469517
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/10.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/usuarios
+    name: /usarios
+    meta:
+      id: req_c8c852ffbc7d4e3ba3139a5130d7857d
+      created: 1729874220149
+      modified: 1748383082580
+      isPrivate: false
+      sortKey: -1729623351741
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "nomeUsuario": "maria",
+          "emailUsuario": "maria@email.com",
+          "senhaUsuario": "123456"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/10.1.0
+        id: pair_4383e6227c9c4fd89bf0131a637611a3
+      - id: pair_133ebb2daf774149ac96a3701b8e143d
+        name: Authorization
+        value: Bearer
+          <eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkX3VzdWFyaW8iOjEsIm5vbWUiOiJGZWxpcGUiLCJlbWFpbCI6ImZlbGlwZUBnbWFpbC5jb20iLCJpZF9saXZybyI6MSwidGl0dWxvIjoiSGFycnkgUG90dGVyIn0sImlhdCI6MTczMDA1OTY3NywiZXhwIjoxNzMwMTQ2MDc3fQ.VnLDRy6UgFnxGiKcC61uoqjEE-gqxgod6t3ZUtu6Scg>
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/usuarios
+    name: /usuarios
+    meta:
+      id: req_0840a6d32106485b888b01a5e3937eb6
+      created: 1729880852614
+      modified: 1748382601952
+      isPrivate: false
+      sortKey: -1729654184106.5
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/10.1.0
+        id: pair_8619902339404eefbe774c3c2c8d792f
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "http://localhost:8080/usuarios/1    "
+    name: /usuarios
+    meta:
+      id: req_cec3f041a4134562b13e10588949a56b
+      created: 1729881358682
+      modified: 1748382858400
+      isPrivate: false
+      sortKey: -1729686002959
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "nomeUsuario": "João Atualizado",
+          "emailUsuario": "joaoatualizado@email.com",
+          "senhaUsuario": "novaSenha123"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/10.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/usuarios/2
+    name: /usuarios
+    meta:
+      id: req_c7aa8e5ba5c846f481acc279e5def7c3
+      created: 1729886269974
+      modified: 1748383095651
+      isPrivate: false
+      sortKey: -1729687729506.5
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/10.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/emprestimos
+    name: /emprestimos
+    meta:
+      id: req_81574a4c4ce64c8daa857d57a48f564a
+      created: 1730027257296
+      modified: 1730115702901
+      isPrivate: false
+      sortKey: -1729623351766
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+            "data_emprestimo": "24/10/2024",
+            "data_devolucao": "24/11/2024",
+            "status": true,
+            "id_livro": "2",
+            "id_usuario": "3"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_f8ab62e3ba1341d6bf51b1229142e0b1
+      - name: User-Agent
+        value: insomnia/10.1.0
+        id: pair_93cd8db0b84e46d382084ba317186e96
+      - id: pair_8bbcae608ac74755b1bd2e57e6dfb6e2
+        name: Authorization
+        value: Bearer
+          <eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkX3VzdWFyaW8iOjEsIm5vbWUiOiJGZWxpcGUiLCJlbWFpbCI6ImZlbGlwZUBnbWFpbC5jb20iLCJpZF9saXZybyI6MSwidGl0dWxvIjoiSGFycnkgUG90dGVyIn0sImlhdCI6MTczMDExNTU5MSwiZXhwIjoxNzMwMjAxOTkxfQ.VAlqXgTymNGJRoURi0TFP1THsE3WF-UY-WB0oFhNHgY>
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "http://localhost:800/emprestimos/1    "
+    name: /emprestimos
+    meta:
+      id: req_0f8c5fb0f4854ee19d148541312060e6
+      created: 1730028446249
+      modified: 1748382851810
+      isPrivate: false
+      sortKey: -1729685509690.5
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "nomeUsuario": "João Atualizado",
+          "emailUsuario": "joaoatualizado@email.com",
+          "senhaUsuario": "novaSenha123"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/10.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/emprestimos/2
+    name: /emprestimos
+    meta:
+      id: req_549491f6f60549c6846b7d0ff48c062b
+      created: 1730028960522
+      modified: 1730028978745
+      isPrivate: false
+      sortKey: -1729688099511.75
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/10.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/emprestimos
+    name: /emprestimos
+    meta:
+      id: req_738f64cb520548c9b36b74a3dc954692
+      created: 1730029176223
+      modified: 1730115242874
+      isPrivate: false
+      sortKey: -1729669600264.25
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/10.1.0
+        id: pair_aaf01c4a4a08404187543b2f003f014a
+      - id: pair_536dcebda8144e7e83cb27b6b976fe39
+        name: Authorization
+        value: Bearer
+          <eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7InBheWxvYWQiOnsiaWRfdXN1YXJpbyI6MSwibm9tZSI6IkZlbGlwZSIsImVtYWlsIjoiZmVsaXBlQGdtYWlsLmNvbSIsImlkX2xpdnJvIjoxLCJ0aXR1bG8iOiJIYXJyeSBQb3R0ZXIifSwiaWF0IjoxNzMwMDU5Njc3LCJleHAiOjE3MzAxNDYwNzd9LCJpYXQiOjE3MzAwNjEwMDEsImV4cCI6MTczMDE0NzQwMX0.qewGgpyDf9TmMELa3QP4PsuCuNv0XMdxlN09ysLz7Xs>
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/login
+    name: /login
+    meta:
+      id: req_ac3ef3f67cc14d18ae1e889d3d29dffd
+      created: 1730058294457
+      modified: 1730058333445
+      isPrivate: false
+      sortKey: -1729623351778.5
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+            "email": "felipe@gmail.com",
+            "senha": "123456"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/10.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/logar
+    name: login
+    meta:
+      id: req_e60fcff66e79455bb0495d840dec88f5
+      created: 1748462223051
+      modified: 1748462441542
+      isPrivate: false
+      sortKey: -1748462223051
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "emailUsuario": "maria@email.com",
+          "senha": "123456"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/usuarios/senha
+    name: senha
+    meta:
+      id: req_41f331c7cb0a417eb12cd6e30ddfeb6c
+      created: 1748462561472
+      modified: 1748462643421
+      isPrivate: false
+      sortKey: -1748462561472
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "emailUsuario": "maria@email.com",
+          "senhaUsuario": "novasenha123"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1719769313643
+    modified: 1719769313643
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1719769313462
+    modified: 1719769313462
+    isPrivate: false
