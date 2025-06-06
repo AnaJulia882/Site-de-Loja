@@ -31,22 +31,23 @@ CREATE TABLE produtos (
     FOREIGN KEY (categorias_id_categoria) REFERENCES categorias(id_categoria)
 );
 
--- Tabela de carrinho
-CREATE TABLE carrinho (
-    id_carrinho INT AUTO_INCREMENT PRIMARY KEY,
-    quantidade INT NOT NULL DEFAULT 1,
-    usuarios_id_usuario INT,
-    produtos_id_produto INT,
-    FOREIGN KEY (usuarios_id_usuario) REFERENCES usuarios(id_usuario),
-    FOREIGN KEY (produtos_id_produto) REFERENCES produtos(id_produto)
-);
-
 -- Tabela de pedidos
 CREATE TABLE pedidos (
     id_pedido INT AUTO_INCREMENT PRIMARY KEY,
     data_pedido DATETIME DEFAULT CURRENT_TIMESTAMP,
     status VARCHAR(30) DEFAULT 'Pendente',
     total DECIMAL(10, 2),
-    carrinho_id_carrinho INT,
-    FOREIGN KEY (carrinho_id_carrinho) REFERENCES carrinho(id_carrinho)
+    usuarios_id_usuario INT,
+    FOREIGN KEY (usuarios_id_usuario) REFERENCES usuarios(id_usuario)
+);
+
+-- Tabela de carrinho
+CREATE TABLE carrinho (
+    id_carrinho INT AUTO_INCREMENT PRIMARY KEY,
+    quantidade INT NOT NULL DEFAULT 1,
+    usuarios_id_usuario INT,
+    produtos_id_produto INT,
+    pedidos_id_pedido INT,
+    FOREIGN KEY (produtos_id_produto) REFERENCES produtos(id_produto),
+    FOREIGN KEY (pedidos_id_pedido) REFERENCES pedidos(id_pedido)
 );
