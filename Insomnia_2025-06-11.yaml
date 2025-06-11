@@ -1,0 +1,610 @@
+type: collection.insomnia.rest/5.0
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1719769299694
+  modified: 1719769299694
+  description: ""
+collection:
+  - url: http://localhost:8080/usuarios
+    name: /usarios
+    meta:
+      id: req_c8c852ffbc7d4e3ba3139a5130d7857d
+      created: 1729874220149
+      modified: 1749675166864
+      isPrivate: false
+      description: ""
+      sortKey: -1729623351741
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "nomeUsuario": "maria",
+          "emailUsuario": "maria@email.com",
+          "senhaUsuario": "123456"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/10.1.0
+        id: pair_4383e6227c9c4fd89bf0131a637611a3
+      - id: pair_133ebb2daf774149ac96a3701b8e143d
+        name: Authorization
+        value: Bearer
+          <eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkX3VzdWFyaW8iOjEsIm5vbWUiOiJGZWxpcGUiLCJlbWFpbCI6ImZlbGlwZUBnbWFpbC5jb20iLCJpZF9saXZybyI6MSwidGl0dWxvIjoiSGFycnkgUG90dGVyIn0sImlhdCI6MTczMDA1OTY3NywiZXhwIjoxNzMwMTQ2MDc3fQ.VnLDRy6UgFnxGiKcC61uoqjEE-gqxgod6t3ZUtu6Scg>
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/usuarios
+    name: /usuarios
+    meta:
+      id: req_455d4533992b46a6bc239bb17ed1a2bd
+      created: 1729880852614
+      modified: 1748382601952
+      isPrivate: false
+      description: ""
+      sortKey: -1729654184106.5
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/10.1.0
+    scripts:
+      preRequest: ""
+      afterResponse: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/usuarios/1
+    name: /usuarios
+    meta:
+      id: req_95457e44dbd141468f96a26a8b0fa8e7
+      created: 1729881358682
+      modified: 1749674977581
+      isPrivate: false
+      description: ""
+      sortKey: -1729686002959
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "nomeUsuario": "João111",
+          "emailUsuario": "João111@email.com",
+          "senhaUsuario": "novaSenha123"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/10.1.0
+    scripts:
+      preRequest: ""
+      afterResponse: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/usuarios/1
+    name: /usuarios
+    meta:
+      id: req_c7aa8e5ba5c846f481acc279e5def7c3
+      created: 1729886269974
+      modified: 1749674986989
+      isPrivate: false
+      description: ""
+      sortKey: -1729687729506.5
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/10.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/categorias
+    name: /categorias
+    meta:
+      id: req_81574a4c4ce64c8daa857d57a48f564a
+      created: 1730027257296
+      modified: 1748912807172
+      isPrivate: false
+      description: ""
+      sortKey: -1729623351766
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nomeCategoria": "Camisetas3",
+          "descricaoCategoria": "Roupas leves"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_f8ab62e3ba1341d6bf51b1229142e0b1
+      - name: User-Agent
+        value: insomnia/10.1.0
+        id: pair_93cd8db0b84e46d382084ba317186e96
+      - id: pair_8bbcae608ac74755b1bd2e57e6dfb6e2
+        name: Authorization
+        value: Bearer
+          <eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkX3VzdWFyaW8iOjEsIm5vbWUiOiJGZWxpcGUiLCJlbWFpbCI6ImZlbGlwZUBnbWFpbC5jb20iLCJpZF9saXZybyI6MSwidGl0dWxvIjoiSGFycnkgUG90dGVyIn0sImlhdCI6MTczMDExNTU5MSwiZXhwIjoxNzMwMjAxOTkxfQ.VAlqXgTymNGJRoURi0TFP1THsE3WF-UY-WB0oFhNHgY>
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "http://localhost:8080/categorias/1    "
+    name: /categorias
+    meta:
+      id: req_0f8c5fb0f4854ee19d148541312060e6
+      created: 1730028446249
+      modified: 1748900914969
+      isPrivate: false
+      description: ""
+      sortKey: -1729685509690.5
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "nome": "Camiseta111",
+          "descricao": "Roupas leves e casuais"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/10.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/categorias/1
+    name: /categorias
+    meta:
+      id: req_549491f6f60549c6846b7d0ff48c062b
+      created: 1730028960522
+      modified: 1749674992010
+      isPrivate: false
+      description: ""
+      sortKey: -1729688099511.75
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/10.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/categorias
+    name: /categorias
+    meta:
+      id: req_738f64cb520548c9b36b74a3dc954692
+      created: 1730029176223
+      modified: 1748725653333
+      isPrivate: false
+      description: ""
+      sortKey: -1729669600264.25
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/10.1.0
+        id: pair_aaf01c4a4a08404187543b2f003f014a
+      - id: pair_536dcebda8144e7e83cb27b6b976fe39
+        name: Authorization
+        value: Bearer
+          <eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7InBheWxvYWQiOnsiaWRfdXN1YXJpbyI6MSwibm9tZSI6IkZlbGlwZSIsImVtYWlsIjoiZmVsaXBlQGdtYWlsLmNvbSIsImlkX2xpdnJvIjoxLCJ0aXR1bG8iOiJIYXJyeSBQb3R0ZXIifSwiaWF0IjoxNzMwMDU5Njc3LCJleHAiOjE3MzAxNDYwNzd9LCJpYXQiOjE3MzAwNjEwMDEsImV4cCI6MTczMDE0NzQwMX0.qewGgpyDf9TmMELa3QP4PsuCuNv0XMdxlN09ysLz7Xs>
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/logar
+    name: login
+    meta:
+      id: req_e60fcff66e79455bb0495d840dec88f5
+      created: 1748462223051
+      modified: 1749675192477
+      isPrivate: false
+      description: ""
+      sortKey: -1748462223051
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "emailUsuario": "maria@email.com",
+          "senha": "123456"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/usuarios/senha
+    name: senha
+    meta:
+      id: req_fd2dd7fe374a45d7a3275d2b5b067b56
+      created: 1748462561472
+      modified: 1749675287101
+      isPrivate: false
+      description: ""
+      sortKey: -1748462561472
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "emailUsuario": "maria@email.com",
+          "senha": "123456"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.1.0
+    scripts:
+      preRequest: ""
+      afterResponse: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/usuarios/1
+    name: usuario/id
+    meta:
+      id: req_b1ee61262c7543fd9cf49936ca16807b
+      created: 1748906045033
+      modified: 1748906073389
+      isPrivate: false
+      description: ""
+      sortKey: -1748906045033
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/categorias/1
+    name: categoria/id
+    meta:
+      id: req_45e57957e12946e6afeb4e553abb5d74
+      created: 1748913260635
+      modified: 1748913275919
+      isPrivate: false
+      description: ""
+      sortKey: -1748913260635
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/pedidos
+    name: /pedidos
+    meta:
+      id: req_5c2ecdd6c7ae4696a019bc3af8eadf06
+      created: 1749675305823
+      modified: 1749675394927
+      isPrivate: false
+      description: ""
+      sortKey: -1749675305823
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/produtos
+    name: /produtos
+    meta:
+      id: req_3a52b59b8b104930ab865bc45d67c74c
+      created: 1749675539222
+      modified: 1749675571093
+      isPrivate: false
+      description: ""
+      sortKey: -1749675539222
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/pedidos/1
+    name: /pedidos/id
+    meta:
+      id: req_1f8c948b18384cc781bcca340c2a339c
+      created: 1749675574081
+      modified: 1749675789967
+      isPrivate: false
+      description: ""
+      sortKey: -1749675574081
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/produtos/1
+    name: /produtos/id
+    meta:
+      id: req_fb07804a03b948848eeacc5565af2770
+      created: 1749675590174
+      modified: 1749676304922
+      isPrivate: false
+      description: ""
+      sortKey: -1749675590174
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/pedidos
+    name: /pedidos
+    meta:
+      id: req_f08fe18077664bf6b7856cc96a951f5c
+      created: 1749675610429
+      modified: 1749677395145
+      isPrivate: false
+      description: ""
+      sortKey: -1749675610429
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "status": "Em andamento",
+          "total": 159.80,
+          "usuarios_id_usuario": 1
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/produtos
+    name: /produtos
+    meta:
+      id: req_91e6e3df93c2488b8574a5168577915a
+      created: 1749675628596
+      modified: 1749676230428
+      isPrivate: false
+      description: ""
+      sortKey: -1749675628596
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "nome": "Camisa Polo",
+          "descricao": "Camisa polo de algodão com gola tradicional.",
+          "preco": 79.90,
+          "tamanho": "M",
+          "cor": "Azul",
+          "estoque": 50,
+          "imagem_url": "https://exemplo.com/imagens/camisa-polo.jpg",
+          "categorias_id_categoria": 1
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/pedidos
+    name: /pedidos
+    meta:
+      id: req_f782d398b94b4325a6ea527bf2844156
+      created: 1749675650794
+      modified: 1749675674863
+      isPrivate: false
+      description: ""
+      sortKey: -1749675650794
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/produtos
+    name: /produtos
+    meta:
+      id: req_955a2731a790404fb57b31e124a259bd
+      created: 1749675681543
+      modified: 1749675697427
+      isPrivate: false
+      description: ""
+      sortKey: -1749675681543
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/pedidos/1
+    name: /pedidos
+    meta:
+      id: req_ed41cc415329496f882c4533d3485d2f
+      created: 1749675700085
+      modified: 1749675727598
+      isPrivate: false
+      description: ""
+      sortKey: -1749675700085
+    method: PUT
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/produtos
+    name: /produtos
+    meta:
+      id: req_6faee80e78894f328bc0b552e2dbf61f
+      created: 1749675730164
+      modified: 1749677349105
+      isPrivate: false
+      description: ""
+      sortKey: -1749675730164
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "nome": "Camisa Polo",
+          "descricao": "Camisa polo de algodão com gola tradicional.",
+          "preco": 79.90,
+          "tamanho": "M",
+          "cor": "Azul",
+          "estoque": 50,
+          "imagem_url": "https://exemplo.com/imagens/camisa-polo.jpg",
+          "categorias_id_categoria": 1
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1719769313643
+    modified: 1719769313643
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1719769313462
+    modified: 1719769313462
+    isPrivate: false
