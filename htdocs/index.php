@@ -1,142 +1,91 @@
 <?php
-// Inclui o arquivo Router.php
-require_once("modelo/Router.php");
+// index.php - Roteador principal
+session_start();
 
-// Instancia o roteador
-$roteador = new Router();
+$route = $_GET['page'] ?? 'home';
 
-//////////////////////////////////////
-// ROTAS DE USUÁRIO
-//////////////////////////////////////
+switch ($route) {
 
-$roteador->get("/usuarios", function () {
-    require_once("controle/Usuario/controle_usuario_read_all.php");
-});
+    // Páginas públicas
+    case 'home':
+        include 'controller/HomeController.php';
+        break;
 
-$roteador->get("/usuarios/(\d+)", function ($idUsuario) {
-    $_GET['id'] = $idUsuario;
-    require_once("controle/Usuario/controle_usuario_read_by_id.php");
-});
+    case 'about':
+        include 'view/user/about.view.php'; // se não tiver controller
+        break;
 
-$roteador->post("/usuarios", function () {
-    require_once("controle/Usuario/controle_usuario_create.php");
-});
+    case 'shop':
+        include 'controller/ShopController.php';
+        break;
 
-$roteador->put("/usuarios/(\d+)", function ($idUsuario) {
-    $_PUT = json_decode(file_get_contents("php://input"), true);
-    $_PUT['id'] = $idUsuario;
-    $_REQUEST = $_PUT;
-    require_once("controle/Usuario/controle_usuario_update.php");
-});
+    case 'search':
+        include 'controller/SearchController.php';
+        break;
 
-$roteador->delete("/usuarios/(\d+)", function ($idUsuario) {
-    $_DELETE = json_decode(file_get_contents("php://input"), true);
-    $_DELETE['id'] = $idUsuario;
-    $_REQUEST = $_DELETE;
-    require_once("controle/Usuario/controle_usuario_delete.php");
-});
+    case 'view':
+        include 'controller/ViewProductController.php';
+        break;
 
-$roteador->post("/logar", function () {
-    require_once("controle/Usuario/controle_usuario_login.php");
-});
+    case 'contact':
+        include 'controller/ContactController.php';
+        break;
 
-$roteador->put("/usuarios/senha", function () {
-    require_once("controle/Usuario/controle_usuario_trocarSenha.php");
-});
+    case 'cart':
+        include 'controller/CartController.php';
+        break;
 
-//////////////////////////////////////
-// ROTAS DE CATEGORIA
-//////////////////////////////////////
+    case 'wishlist':
+        include 'controller/WishlistController.php';
+        break;
 
-$roteador->post("/categorias", function () {
-    require_once("controle/Categoria/controle_categoria_create.php");
-});
+    case 'checkout':
+        include 'controller/CheckoutController.php';
+        break;
 
-$roteador->delete("/categorias/(\d+)", function ($idCategoria) {
-    $_DELETE = json_decode(file_get_contents("php://input"), true);
-    $_DELETE['id'] = $idCategoria;
-    $_REQUEST = $_DELETE;
-    require_once("controle/Categoria/controle_categoria_delete.php");
-});
+    case 'orders':
+        include 'controller/OrderController.php';
+        break;
 
-$roteador->get("/categorias", function () {
-    require_once("controle/Categoria/controle_categoria_read_all.php");
-});
+    // Login e Cadastro
+    case 'login':
+        include 'controller/LoginController.php';
+        break;
 
-$roteador->get("/categorias/(\d+)", function ($idCategoria) {
-    $_GET['id'] = $idCategoria;
-    require_once("controle/Categoria/controle_categoria_read_by_id.php");
-});
+    case 'register':
+        include 'controller/RegisterController.php';
+        break;
 
-$roteador->put("/categorias/(\d+)", function ($idCategoria) {
-    $_PUT = json_decode(file_get_contents("php://input"), true);
-    $_PUT['id'] = $idCategoria;
-    $_REQUEST = $_PUT;
-    require_once("controle/Categoria/controle_categoria_update.php");
-});
+    case 'logout':
+        include 'controller/logout.php'; // você pode criar esse arquivo para session_destroy
+        break;
 
-//////////////////////////////////////
-// ROTAS DE PRODUTO
-//////////////////////////////////////
+    // Painel Administrativo
+    case 'admin-dashboard':
+        include 'controller/AdminDashboardController.php';
+        break;
 
-$roteador->post("/produtos", function () {
-    require_once("controle/Produto/controle_produto_create.php");
-});
+    case 'admin-products':
+        include 'controller/AdminProductsController.php';
+        break;
 
-$roteador->get("/produtos", function () {
-    require_once("controle/Produto/controle_produto_read_all.php");
-});
+    case 'admin-update-product':
+        include 'controller/AdminUpdateProductController.php';
+        break;
 
-$roteador->get("/produtos/(\d+)", function ($idProduto) {
-    $_GET['id'] = $idProduto;
-    require_once("controle/Produto/controle_produto_read_by_id.php");
-});
+    case 'admin-orders':
+        include 'controller/AdminOrdersController.php';
+        break;
 
-$roteador->put("/produtos/(\d+)", function ($idProduto) {
-    $_PUT = json_decode(file_get_contents("php://input"), true);
-    $_PUT['id'] = $idProduto;
-    $_REQUEST = $_PUT;
-    require_once("controle/Produto/controle_produto_update.php");
-});
+    case 'admin-users':
+        include 'controller/AdminUsersController.php';
+        break;
 
-$roteador->delete("/produtos/(\d+)", function ($idProduto) {
-    $_DELETE = json_decode(file_get_contents("php://input"), true);
-    $_DELETE['id'] = $idProduto;
-    $_REQUEST = $_DELETE;
-    require_once("controle/Produto/controle_produto_delete.php");
-});
+    case 'admin-contacts':
+        include 'controller/AdminContactsController.php';
+        break;
 
-//////////////////////////////////////
-// ROTAS DE PEDIDO
-//////////////////////////////////////
-
-$roteador->post("/pedidos", function () {
-    require_once("controle/Pedido/controle_pedido_create.php");
-});
-
-$roteador->get("/pedidos", function () {
-    require_once("controle/Pedido/controle_pedido_read_all.php");
-});
-
-$roteador->get("/pedidos/(\d+)", function ($idPedido) {
-    $_GET['id'] = $idPedido;
-    require_once("controle/Pedido/controle_pedido_read_by_id.php");
-});
-
-$roteador->put("/pedidos/(\d+)", function ($idPedido) {
-    $_PUT = json_decode(file_get_contents("php://input"), true);
-    $_PUT['id'] = $idPedido;
-    $_REQUEST = $_PUT;
-    require_once("controle/Pedido/controle_pedido_update.php");
-});
-
-$roteador->delete("/pedidos/(\d+)", function ($idPedido) {
-    $_DELETE = json_decode(file_get_contents("php://input"), true);
-    $_DELETE['id'] = $idPedido;
-    $_REQUEST = $_DELETE;
-    require_once("controle/Pedido/controle_pedido_delete.php");
-});
-
-// Executa o roteador
-$roteador->run();
-?>
+    default:
+        include 'controller/HomeController.php';
+        break;
+}
