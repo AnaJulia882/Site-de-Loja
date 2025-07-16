@@ -1,5 +1,5 @@
 🛒 Loja Virtual - Sistema E-commerce
-Este projeto é um sistema de e-commerce desenvolvido com foco na organização de funcionalidades essenciais para o cliente e para o administrador da loja. 
+Este projeto é um sistema de e-commerce desenvolvido com foco na organização de funcionalidades essenciais para o cliente e para o administrador da loja. Ele pode ser usado como base para um projeto de TCC ou como ponto de partida para lojas online.
 
 💡 Funcionalidades
 👥 Público (Clientes)
