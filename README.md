@@ -1,32 +1,32 @@
-# 🛍️ Loja de Roupas - Projeto de TCC
+🛒 Loja Virtual - Sistema E-commerce
+Este projeto é um sistema de e-commerce desenvolvido com foco na organização de funcionalidades essenciais para o cliente e para o administrador da loja. 
 
-Este é um sistema de e-commerce desenvolvido como Trabalho de Conclusão de Curso (TCC) do curso técnico em Informática. O projeto consiste em um site de loja de roupas com funcionalidades completas para o cliente e para o administrador.
+💡 Funcionalidades
+👥 Público (Clientes)
+Cadastro e login de usuários
 
-## 💡 Funcionalidades
+Visualização de produtos disponíveis
 
-### 🧑‍💻 Público (Cliente)
-- Cadastro e login de clientes
-- Visualização de produtos por categoria
-- Carrinho de compras
-- Finalização de pedidos
+Adição de produtos ao carrinho
 
-### 👩‍💼 Administrador (Dona da loja)
-- Login administrativo
-- Cadastro, edição e exclusão de produtos
-- Cadastro e gerenciamento de categorias
-- Visualização dos pedidos realizados pelos clientes
+Adição de produtos à wishlist
 
-## 🛠️ Tecnologias Utilizadas
+Envio de mensagens via formulário de contato
 
-- **Linguagem:** PHP
-- **Banco de Dados:** MySQL
-- **Frontend:** HTML, CSS, JavaScript
-- **Servidor local:** XAMPP
+Finalização de pedidos
 
-## 🗂️ Estrutura do Banco de Dados
+👩‍💼 Administrador
+Visualização e gerenciamento de usuários e pedidos
 
-- `usuarios` — informações dos clientes
-- `categorias` — categorias dos produtos (ex: camisetas, vestidos)
-- `produtos` — catálogo de produtos
-- `carrinho` — itens temporários adicionados ao carrinho
-- `pedidos` — registros de compras finalizadas
+Cadastro, edição e exclusão de produtos
+
+Acompanhamento das mensagens enviadas pelos clientes
+
+🛠️ Tecnologias Utilizadas
+Linguagem: PHP
+
+Banco de Dados: MySQL
+
+Frontend: HTML, CSS, JavaScript
+
+Servidor Local: XAMPP
