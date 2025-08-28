@@ -70,3 +70,11 @@ CREATE TABLE pedidos (
   status_pagamento VARCHAR(20) NOT NULL DEFAULT 'pending',
   FOREIGN KEY (id_usuario) REFERENCES usuarios(id) ON DELETE CASCADE
 );
+
+INSERT INTO usuarios (nome, email, senha, tipo_usuario)
+VALUES (
+    'Admin', 
+    'admin@shop.com', 
+    '$2y$10$uI8nxlDbOZjvTZ4RyOtc7efER5YZ1NQ7Vb13dSt0liTgxNBrtVG8e', -- Senha criptografada 123456
+    'admin'
+);
