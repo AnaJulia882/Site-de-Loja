@@ -7,9 +7,19 @@ if (session_status() == PHP_SESSION_NONE) {
 @include_once 'config/config.php';
 
 // Define variáveis com fallback seguro
-$user_id = $_SESSION['user_id'] ?? 0;
-$user_name = $_SESSION['user_name'] ?? 'Visitante';
-$user_email = $_SESSION['user_email'] ?? '-';
+// Prioriza admin se estiver logado
+if (isset($_SESSION['admin_id'])) {
+    $user_id    = $_SESSION['admin_id'];
+    $user_name  = $_SESSION['nome_usuario'] ?? 'Admin';
+    $user_email = $_SESSION['email_usuario'] ?? '-';
+    $is_admin   = true;
+} else {
+    $user_id    = $_SESSION['user_id'] ?? 0;
+    $user_name  = $_SESSION['user_name'] ?? 'Visitante';
+    $user_email = $_SESSION['user_email'] ?? '-';
+    $is_admin   = false;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -43,14 +53,14 @@ if (isset($message)) {
 <header class="header">
    <div class="flex">
 
-      <a href="/home" class="logo">Honey Bee</a>
+   <a href="/home" class="logo">Honey Bee</a>
 
       <nav class="navbar">
          <ul>
             <li><a href="/home">início</a></li>
             <li><a href="#">Contato</a>
                <ul>
-                  <li><a href="/../view/user/contato.view.php">contato</a></li> \\copiar para todos os outros
+                  <li><a href="/contato">contato</a></li> 
                </ul>
             </li>
             <li><a href="/shop">loja</a></li>
@@ -97,7 +107,7 @@ if (isset($message)) {
          <a href="/carrinho"><i class="fas fa-shopping-cart"></i><span>(<?php echo $cart_num_rows; ?>)</span></a>
       </div>
 
-      <?php if ($user_id): ?>
+      <?php if ($user_id || isset($_SESSION['admin_id'])): ?>
          <div class="account-box">
             <p>usuário: <span><?php echo htmlspecialchars($user_name); ?></span></p>
             <p>email: <span><?php echo htmlspecialchars($user_email); ?></span></p>

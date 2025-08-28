@@ -1,3 +1,4 @@
+
 <?php @include 'shared/header.php'; ?>
 
 <?php if (!empty($mensagens)): ?>
@@ -14,12 +15,12 @@
 <section class="products">
    <h1 class="title">Últimos Produtos</h1>
    <div class="box-container">
-      <?php if ($produtos && $produtos->num_rows > 0): ?>
+      <?php if (isset($produtos) && $produtos && $produtos->num_rows > 0): ?>
          <?php while($produto_atual = $produtos->fetch_assoc()): ?>
             <form action="" method="POST" class="box">
-               <a href="view_page.php?pid=<?= $produto_atual['id']; ?>" class="fas fa-eye"></a>
+               <a href="/visualizar?id_produto=<?= $produto_atual['id']; ?>" class="fas fa-eye"></a>
                <div class="preco">R$<?= $produto_atual['preco']; ?>,-</div>
-               <img src="images/<?= $produto_atual['imagem']; ?>" alt="" class="image">
+               <img src="/images/<?= $produto_atual['imagem']; ?>" alt="" class="image">
                <div class="nome"><?= $produto_atual['nome']; ?></div>
                <input type="number" name="quantidade_produto" value="1" min="1" class="qty">
                <input type="hidden" name="id_produto" value="<?= $produto_atual['id']; ?>">

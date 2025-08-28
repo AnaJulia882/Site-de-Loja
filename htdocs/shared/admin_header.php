@@ -8,7 +8,7 @@
          <a href="/admin-produtos">Produtos</a>
          <a href="/admin-pedidos">Pedidos</a>
          <a href="/admin-usuarios">Usuários</a>
-         <a href="/admin-contato">Mensagens</a>
+         <a href="/admin-contatos">Mensagens</a>
       </nav>
 
       <div class="icons">

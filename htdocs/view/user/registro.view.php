@@ -1,3 +1,4 @@
+<?php @include 'shared/footer.php'; ?>
 <?php @include 'shared/header.php'; ?>
 
 <section class="form-container">
@@ -15,6 +16,6 @@
       <input type="password" name="senha" required placeholder="Digite sua senha" class="box">
       <input type="password" name="confirmar_senha" required placeholder="Confirme sua senha" class="box">
       <input type="submit" name="enviar" value="Cadastrar" class="btn">
-      <p>Já tem uma conta? <a href="login.php">Entrar agora</a></p>
+   <p>Já tem uma conta? <a href="/login">Entrar agora</a></p>
    </form>
 </section>

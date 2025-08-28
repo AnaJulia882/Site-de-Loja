@@ -32,7 +32,7 @@
                   <img class="imagem" src="/images/<?= $product['image']; ?>" alt="<?= $product['name']; ?>">
                   <div class="nome"><?= $product['nome']; ?></div>
                   <div class="details"><?= $product['details']; ?></div>
-                  <a href="AdminProductsController.php?update=<?= $product['id']; ?>" class="option-btn">Atualizar</a>
+                  <a href="/admin-atualizar-produto?update=<?= $product['id']; ?>" class="option-btn">Atualizar</a>
                   <a href="?delete=<?= $product['id']; ?>" class="delete-btn" onclick="return confirm('Excluir produto?');">Excluir</a>
                </div>
 

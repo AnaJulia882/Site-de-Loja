@@ -16,45 +16,29 @@
       <h1 class="title">Painel de Controle</h1>
       <div class="box-container">
 
-         <div class="box">
-            <h3>R$<?= $pagamentos_pendentes; ?>,00</h3>
-            <p>Pagamentos Pendentes</p>
-         </div>
+         <h3>R$<?= $pagamentos_pendentes; ?>,00</h3>
+         <p>Pagamentos Pendentes</p>
 
-         <div class="box">
-            <h3>R$<?= $pagamentos_concluidos; ?>,00</h3>
-            <p>Pagamentos Concluídos</p>
-         </div>
+         <h3>R$<?= $pagamentos_concluidos; ?>,00</h3>
+         <p>Pagamentos Concluídos</p>
 
-         <div class="box">
-            <h3><?= $numero_de_pedidos; ?></h3>
-            <p>Pedidos Realizados</p>
-         </div>
+         <h3><?= $numero_de_pedidos; ?></h3>
+         <p>Pedidos Realizados</p>
 
-         <div class="box">
-            <h3><?= $numero_de_produtos; ?></h3>
-            <p>Produtos Cadastrados</p>
-         </div>
+         <h3><?= $numero_de_produtos; ?></h3>
+         <p>Produtos Cadastrados</p>
 
-         <div class="box">
-            <h3><?= $numero_de_usuario; ?></h3>
-            <p>Usuários Comuns</p>
-         </div>
+         <h3><?= $numero_de_usuarios; ?></h3>
+         <p>Usuários Comuns</p>
 
-         <div class="box">
-            <h3><?= $numero_admin; ?></h3>
-            <p>Administradores</p>
-         </div>
+         <h3><?= $numero_de_admin; ?></h3>
+         <p>Administradores</p>
 
-         <div class="box">
-            <h3><?= $numero_contas; ?></h3>
-            <p>Total de Contas</p>
-         </div>
+         <h3><?= $numero_de_contas; ?></h3>
+         <p>Total de Contas</p>
 
-         <div class="box">
-            <h3><?= $numero_de_mensagens; ?></h3>
-            <p>Novas Mensagens</p>
-         </div>
+         <h3><?= $numero_de_mensagens; ?></h3>
+         <p>Novas Mensagens</p>
 
       </div>
    </section>

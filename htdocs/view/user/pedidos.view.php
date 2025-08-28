@@ -1,5 +1,5 @@
 <!-- view/user/pedidos.view.php -->
-<?php @include 'shared/header.php'; ?>
+<?php @include '../../shared/header.php'; ?>
 
 <section class="heading">
     <h3>Seus Pedidos</h3>
@@ -10,7 +10,7 @@
     <h1 class="title">Pedidos Realizados</h1>
 
     <div class="box-container">
-        <?php if ($pedidos->num_rows > 0): ?>
+        <?php if (isset($pedidos) && $pedidos && $pedidos->num_rows > 0): ?>
             <?php while ($pedido = $pedidos->fetch_assoc()): ?>
                 <div class="box">
                     <p>Realizado em: <span><?= $pedido['data_pedido']; ?></span></p>

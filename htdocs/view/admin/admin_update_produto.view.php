@@ -23,7 +23,7 @@
             <textarea name="details" required class="box" placeholder="Atualizar detalhes do produto" cols="30" rows="10"><?= $product['details']; ?></textarea>
             <input type="file" accept="image/*" name="image" class="box">
             <input type="submit" name="update_product" value="Atualizar Produto" class="btn">
-            <a href="admin_products.php" class="option-btn">Voltar</a>
+            <a href="/admin-produtos" class="option-btn">Voltar</a>
          </form>
       <?php else: ?>
          <p class="empty">Nenhum produto selecionado para atualizar.</p>

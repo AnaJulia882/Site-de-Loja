@@ -1,3 +1,4 @@
+
 <?php @include 'shared/header.php'; ?>
 
 <section class="home">
@@ -9,12 +10,14 @@
 <section class="products">
     <h1 class="title">Últimos Produtos</h1>
     <div class="box-container">
-        <?php   
-        if ($produtos->num_rows > 0) {
-            while ($produto_atual = $produtos->fetch_assoc()) {
+        <?php
+        // evita aviso caso a view seja acessada sem passar pelo controller
+        // e só acessa num_rows se $produtos existir
+        if (isset($produtos) && $produtos && $produtos->num_rows > 0):
+            while ($produto_atual = $produtos->fetch_assoc()):
         ?>
         <form action="" method="POST" class="box">
-            <a href="index.php?page=view&pid=<?= $produto_atual['id']; ?>" class="fas fa-eye"></a>
+            <a href="/visualizar?id_produto=<?= $produto_atual['id']; ?>" class="fas fa-eye"></a>
             <div class="preco">R$<?= $produto_atual['preco']; ?>,00</div>
             <img src="/images/<?= $produto_atual['imagem']; ?>" alt="" class="image">
             <div class="nome"><?= $produto_atual['nome']; ?></div>
@@ -27,22 +30,22 @@
             <input type="submit" name="adicionar_carrinho" value="Adicionar ao carrinho" class="btn">
         </form>
         <?php
-            }
-        } else {
+            endwhile;
+        else:
             echo '<p class="empty">Nenhum produto adicionado ainda!</p>';
-        }
+        endif;
         ?>
     </div>
 
     <div class="more-btn">
-        <a href="index.php?page=shop" class="option-btn">Carregar mais</a>
+    <a href="/shop" class="option-btn">Carregar mais</a>
     </div>
 </section>
 
 <section class="home-contato">
     <div class="content">
         <h3>Tem alguma dúvida?</h3>
-        <a href="index.php?page=contato" class="btn">Contate-nos</a>
+    <a href="/contato" class="btn">Contate-nos</a>
     </div>
 </section>
 

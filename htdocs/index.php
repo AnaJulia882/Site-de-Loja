@@ -2,25 +2,28 @@
 // index.php - Roteador principal
 session_start();
 
-$rout = $_GET['pagina'] ?? 'home';
+$rota = $_GET['pagina'] ?? 'home';
 
-switch ($rout) {
+switch ($rota) {
 
     // Páginas públicas
     case 'home':
         include 'controle/HomeControle.php';
         break;
 
-    case 'shop':
-        include 'controle/ShopControle.php';
+    case 'sobre':
+        include 'view/user/sobre.view.php'; // se não tiver controle
         break;
 
+    case 'loja':
+        include 'controle/ShopControle.php';
+        break;
 
     case 'pesquisa':
         include 'controle/PesquisaControle.php';
         break;
 
-    case 'view':
+    case 'visualizar':
         include 'controle/ViewProdutoControle.php';
         break;
 
